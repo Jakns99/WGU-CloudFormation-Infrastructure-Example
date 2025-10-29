@@ -331,19 +331,6 @@ Resources:
             systemctl start httpd
             echo "<h1>${ProjectName} - app server</h1>" > /var/www/html/index.html
 
-  # Mapping for Amazon Linux 2 AMI per region (minimal mapping; add regions as needed)
-  # NOTE: The values below are placeholders; in production use SSM Parameter or dynamic lookup.
-  AWSRegionToAMI:
-    type: "AWS::CloudFormation::Mapping"
-    properties: {}
-
-  LatestAmiParameter:
-    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
-    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
-    Description: "SSM parameter name for latest Amazon Linux 2 AMI"
-  # NOTE: The LaunchTemplate above attempted to use mapping; instead replace ImageId with LatestAmiParameter via override:
-
-
   # Application Load Balancer #
   AppLoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer
@@ -489,3 +476,4 @@ Outputs:
   AssetsBucketName:
     Description: "S3 Assets Bucket Name"
     Value: !Ref AssetsBucket
+
