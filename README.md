@@ -11,4 +11,8 @@ The Template includes:
 - **Networking**: Virtual Private Cloud with public and private subnets, NAT Gateway, Route Tables, and Internet Gateway.
 - **Load Balancing**: Application Load Balancer (ALB) that distributes web traffic to EC2 instances.
 - **Database**: Amazon RDS MySQL, as a relational database with encryption, subnet groups, with Secrets Manager Integration.
-- 
+- **Storage**: S3 bucket with versioning, AES-256 server-side/at-rest encryption. Used for storing various company files.
+- **Monitoring**: CloudWatch alarm for CPU Metrics, can be further customized depending on needs.
+- **Security**: Security Groups, IAM Roles, and encrypted credentials via Secrets Manager.
+
+---
